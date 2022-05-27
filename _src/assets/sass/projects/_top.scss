@@ -1,0 +1,176 @@
+// ============================================================
+// p-top
+// ============================================================
+// p-topHero
+// p-distribution
+
+// ------------------------------------------------------------
+
+// ------------------------------------------------------------
+// p-topHero
+// ------------------------------------------------------------
+.p-topHero {
+  display: flex;
+	justify-content: space-between;
+	align-items: center;
+  position: relative;
+  padding: 80px 0 160px;
+  //background-color: #e5e5e5;
+  @include clearfix;
+  @include mq($pc) {
+    display: block;
+    padding: 40px 0 60px;
+  }
+}
+.p-topHeroLogo {
+  position: relative;
+  float: left;
+  width: 45%;
+  //background-color: #000;
+  text-align: center;
+  @include mq($pc) {
+    float: none;
+    width: 100%;
+    margin-bottom: 2em;
+  }
+  img {
+    @include mq($pcM) {
+      width: 68%;
+      height: auto;
+    }
+    @include mq($pc) {
+      width: 50%;
+    }
+    @include mq($miniTablet) {
+      width: 60%;
+    }
+  }
+}
+.p-topHeroSlide {
+    //z-index: 0;
+    //overflow: hidden;
+    float: right;
+    position: relative;
+    width: 55%;
+    &.is-hidden {
+      visibility: hidden;
+    }
+    @include mq($pc) {
+      float: none;
+      width: 100%;
+    }
+  }
+
+// ------------------------------------------------------------
+// p-distribution
+// ------------------------------------------------------------
+.p-distribution {
+  position: relative;
+  margin-bottom: 120px;
+  @include clearfix;
+  @include mq($miniTablet) {
+    margin-bottom: 60px;
+  }
+}
+.p-distributionImg {
+  float: left;
+  width: 435px;
+  @include mq($pcL) {
+    width: 46%;
+  }
+  @include mq($miniTablet) {
+    margin: 0 auto 20px;
+    float: none;
+    width: 80%
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.p-distributionBody {
+  float: right;
+  width: calc(100% - 550px);
+  @include mq($pcL) {
+    width: 46%;
+  }
+  @include mq($miniTablet) {
+    float: none;
+    width: 100%
+  }
+}
+.p-distributionTitle {
+  margin: 0 0 1.2em;
+  @include fz(28);
+  @include mq($miniTablet) {
+    margin: 0 0 0.75em;
+    @include fz(20);
+  }
+}
+.p-distributionBody__text {
+  nav {
+    padding: 2em 0 0;
+    @include mq($miniTablet) {
+      padding: 1em 0 0;
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// p-topPubThumb
+// ------------------------------------------------------------
+.p-topPubThumb {
+  display: flex;
+  flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+  margin: 40px 0;
+}
+.p-topPubThumbItem {
+  margin: 6px;
+  width: 30%;
+  border: 1px solid #e5e5e5;
+  @include mq($miniTablet) {
+    width: 45%;
+  }
+}
+
+// ------------------------------------------------------------
+// p-topPubThumb
+// ------------------------------------------------------------
+.p-topMedia {
+  margin: 60px 0 60px;
+}
+.p-topMediaBlock {
+  padding-left: 1.2em;
+  li {
+    margin: 0 0 .5em 0;
+    padding: 0;
+    line-height: 1.6;
+    //list-style: none;
+    
+    a {
+
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// p-topNews
+// ------------------------------------------------------------
+.p-topNews {
+  width: 500px;
+  margin: 0 auto 40px;
+  @include mq($ipad) {
+    width: 320px;
+  }
+}
+
+.fb_iframe_widget,
+.fb_iframe_widget span,
+.fb_iframe_widget span iframe[style] {
+  width: 100% !important;
+  @include mq($ipad) {
+    height: 280px !important;
+  }
+}

@@ -1,0 +1,98 @@
+// ============================================================
+// Mixins
+// ============================================================
+
+// link
+@mixin basicLink($color, $colorHover: lighten($color, 20%)) {
+  &:link,
+  &:visited {
+    color: $color;
+    text-decoration: underline;
+  }
+  &:hover,
+  &:active {
+    color: $colorHover;
+    text-decoration: underline;
+  }
+}
+@mixin hoverLineLink($color, $colorHover: lighten($color, 20%)) {
+  &:link,
+  &:visited {
+    color: $color;
+    text-decoration: none;
+  }
+  &:hover,
+  &:active {
+    color: $colorHover;
+    text-decoration: underline;
+  }
+}
+@mixin noLineLink($color, $colorHover: lighten($color, 20%)) {
+  &:link,
+  &:visited {
+    color: $color;
+    text-decoration: none;
+  }
+  &:hover,
+  &:active {
+    color: $colorHover;
+    text-decoration: none;
+  }
+}
+
+// ------------------------------------------------------------
+// font-size
+// ------------------------------------------------------------
+@mixin fz($size: 16, $base: 16) {
+  font-size: ($size / $base) * 1rem;
+}
+
+// ------------------------------------------------------------
+// fullimage
+// ------------------------------------------------------------
+@mixin fullimage {
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+// ------------------------------------------------------------
+// clearfix
+// ------------------------------------------------------------
+@mixin clearfix {
+  &::after {
+    content: '.';
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+// ------------------------------------------------------------
+// media-query
+// ------------------------------------------------------------
+@mixin mq($pc) {
+  @media screen and (max-width: $pc) {
+    @content;
+  }
+}
+@mixin mqMin($pc) {
+  @media screen and (min-width: $pc) {
+    @content;
+  }
+}
+
+//--------------------------
+//  nth-ani-delay()
+//  @description: Animation Delay on nth-childs
+//  @param: $delay_items: [7] - number of nth-of-type items to create
+//  @param: $delay_time:[1.5s] - transition-dealy value
+//--------------------------
+@mixin nth-ani-delay($delay_items: 7, $delay_time: 0.2s){
+  @for $i from 1 through $delay_items {
+    &:nth-child(#{$i}) {   
+     animation-delay: $delay_time * $i; 
+    }
+   }
+  }

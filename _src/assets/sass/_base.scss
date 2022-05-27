@@ -1,0 +1,65 @@
+// ============================================================
+// Base
+// ============================================================
+html,body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+html {
+  
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: $base-black;
+  font-family: $fontFamily;
+  line-height: 1.75;
+  font-feature-settings: "palt";
+  letter-spacing: .05em;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: unset;
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @include mq($miniTablet) {
+    line-height: 1.5;
+  }
+}
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+figure {
+  margin: 0;
+}
+
+input,
+select {
+  color: #333;
+  box-shadow: none;
+}
+
+textarea {
+  resize: vertical;
+  line-height: 1.4;
+  box-shadow: none;
+}
+input[type="search"] {
+  box-sizing: border-box;
+}
+a {
+  &:link,
+  &:visited {
+    color: $blue;
+    text-decoration: none;
+  }
+  &:hover,
+  &:active {
+    color: #999;
+    text-decoration: none;
+  }
+}

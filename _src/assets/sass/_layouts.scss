@@ -1,0 +1,589 @@
+// ============================================================
+// Layouts
+// ============================================================
+// l-wrapper
+// l-header
+// l-fullNav
+// l-contactBtn
+// l-content
+// l-logoTop
+// l-logo
+// l-hero
+// l-heroSmall
+// l-topHero
+// l-mainLead
+// l-section
+// l-block
+// l-moreBtn
+// l-treatment
+// l-treatmentBtn
+// l-secImg
+// l-circlePht
+// l-pager
+// l-footer
+// ------------------------------------------------------------
+
+body {
+  @include fz(16);
+  @include mq($miniTablet) {
+    @include fz(15);
+  }
+}
+// ------------------------------------------------------------
+// l-wrapper
+// ------------------------------------------------------------
+.l-wrapper {
+  z-index: $zindex-wrapper;
+  position: relative;
+  margin-top: 80px;
+  padding: 0 60px;
+  box-sizing: border-box;
+  @include fz(14);
+  @include mq($miniTablet) {
+    margin-top: 40px;
+    padding: 0 15px;
+    @include fz(14);
+  }
+}
+// ------------------------------------------------------------
+// l-header
+// ------------------------------------------------------------
+.l-header {
+  z-index: $zindex-header;
+  position: fixed;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  transition: 0.2s ease-out;
+  &.is-fixed {
+    height: 60px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.16);
+    @include mq($pc) {
+      height: 40px;
+    }
+    .l-logoTop {
+      top: 8px;
+      width: 40px;
+      height: 46px;
+      background-size: 40px 46px;
+      @include mq($pc) {
+        top: 3px;
+        background-size: 30px 35px;
+      }
+    }
+    .l-header__gnav {
+      bottom: 14px;
+      @include mq($pc) {
+        bottom: 0;
+      }
+      ul {
+        li {
+          //bottom: 12px;
+        }
+      }
+    }
+    .l-header__subnav,
+    .l-footer__sns {
+      top: 16px;
+      @include mq($pc) {
+        top: 5px;
+      }
+      @include mq($miniTablet) {
+        top: 7px;
+      }
+    }
+  }
+}
+.l-header__gnav {
+ position: absolute;
+ bottom: 24px;
+ right: 260px;
+ transition: 0.2s ease-out;
+ @include mq($pc) {
+  background-color: #fff;
+  position: fixed;
+  box-sizing: border-box;
+  left: 0;
+  right: auto;
+  width: 100%;
+  height: 100%;
+ }
+ ul {
+   margin: 0;
+   padding: 0;
+   @include mq($pc) {
+     position: absolute;
+     margin: auto;
+     top: -100%;
+     bottom: -100%;
+     right: -100%;
+     left: -100%;
+     width: 240px;
+     height: 360px;
+   }
+  li {
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    @include mq($pc) {
+      display: block;
+      padding: 10px 0 20px;
+      text-align: center;
+      @include fz(20);
+      margin-left: 0;
+      margin-bottom: .75em;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    a {
+      display: inline-block;
+      margin-left: 1.5em;
+      @include fz(16);
+      letter-spacing: 0;
+      //font-weight: bold;
+      font-family: $fontE;
+      color: $base-black;
+    }
+    &.is-current {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background-color: $blue;
+      }
+      
+    }
+  }
+}
+}
+.l-header__gnav__sub {
+  padding-left: 28px;
+  background-repeat: no-repeat;
+  &.gnav--online {
+    background-image: url('/assets/images/common/ic-online.svg');
+  }
+  &.gnav--shop {
+    background-image: url('/assets/images/common/ic-shop.svg');
+  }
+  &.gnav--about {
+    background-image: url('/assets/images/common/ic-about.svg');
+  }
+}
+
+.l-header__subnav,
+.l-footer__sns {
+  position: absolute;
+  top: 24px;
+  right: 60px;
+  transition: 0.2s ease-out;
+  @include mq($pc) {
+    top: 5px;
+  }
+  @include mq($miniTablet) {
+    top: 7px;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      list-style: none;
+      margin-left: 5px;
+      @include mq($miniTablet) {
+        margin-left: 3px;
+      }
+      a {
+        > img {
+          height: 24px;
+          width: 24px;
+          @include mq($miniTablet) {
+            //height: 26px;
+            //width: 26px;
+          }
+        }
+      }
+    }
+    li.subnav-note {
+      a {
+        > img {
+          height: 24px;
+          width: 68px;
+        }
+      }
+    }
+  }
+}
+/* footer SNS の差分調整 */
+.l-footer__sns {
+  position: relative;
+  bottom: auto;
+  top: auto;
+  right: auto;
+  @include mq($pc) {
+    top: auto;
+  }
+}
+
+.l-header__subnav__shop {
+  font-family: $fontE;
+  font-weight: 600;
+  margin-right: 10px;
+  @include fz(13);
+  @include mq($miniTablet) {
+    @include fz(11);
+  }
+  i {
+    margin-right: 0px;
+  }
+  a {
+    display: block;
+    padding: .25em 1.2em;
+    background-color: $yellow;
+    letter-spacing: 0;
+    //font-weight: bold;
+    &:hover {
+      color: $base-black;
+    }
+
+  }
+}
+
+/* menu */
+.menu {
+  display: none;
+  height: 10px;
+  position: absolute;
+  right: 20px;
+  top: 22px;
+  width: 22px;
+  z-index: 99;
+  @include mq($pc) {
+    display: block;
+    right: 20px;
+    top: 16px;
+  }
+}
+.menu__line {
+  background: $base-black;
+  display: block;
+  height: 2px;
+  position: absolute;
+  transition: transform .3s;
+  width: 100%;
+  //border-radius: 2px;
+}
+.menu__line--center {
+  top: 6px;
+}
+.menu__line--bottom {
+  bottom: 0;
+}
+.menu__line--top.active {
+  top: 2px;
+  transform: rotate(45deg);
+}
+.menu__line--center.active {
+  transform: scaleX(0);
+}
+.menu__line--bottom.active {
+  bottom: 6px;
+  transform: rotate(135deg);
+}
+
+
+// ------------------------------------------------------------
+// l-logoTop
+// ------------------------------------------------------------
+.l-logoTop {
+  position: absolute;
+  top: 12px;
+  left: 60px;
+  margin: 0;
+  width: 50px;
+  height: 58px;
+  background-image: url('../images/common/logo_kinologue.svg');
+  background-repeat: no-repeat;
+  text-indent:100%;
+	white-space:nowrap;
+	overflow:hidden;
+  @include mq($miniTablet) {
+    top: 6px;
+    left: 15px;
+    width: 30px;
+    height: 35px;
+    background-size: 30px 35px;
+  }
+}
+// ------------------------------------------------------------
+// l-logo
+// ------------------------------------------------------------
+.l-logo {
+
+}
+// ------------------------------------------------------------
+// l-content
+// ------------------------------------------------------------
+.l-content {
+  position: relative;
+  background-color: #fff;
+  @include mq($pc) {
+    //padding-top: 80px;
+  }
+}
+.l-content--top {
+  position: relative;
+  padding: 0;
+  background-color: #fff;
+}
+
+// ------------------------------------------------------------
+// l-hero
+// ------------------------------------------------------------
+
+.l-hero__slide {
+
+  &::before {
+    /*
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .2);
+    z-index: 1;*/
+  }
+  .c-pictures {
+
+
+  }
+  .c-pictures__item {
+
+  }
+
+  .is-current {
+    //transition: 6s linear;
+    //transform: scale(1);
+  }
+}
+
+// ------------------------------------------------------------
+// l-sec
+// ------------------------------------------------------------
+.l-sec {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 80px 0;
+  max-width: $pcL;
+  width: 100%;
+  @include mq($pcM) {
+    padding: 60px 5%;
+    width: 100%;
+  }
+  @include mq($pc) {
+    padding: 30px 5%;
+  }
+  @include mq($miniTablet) {
+    padding: 15px 5%;
+  }
+  &.c-lineBlue {
+    padding-top: 40px;
+  }
+}
+.l-sec--m {
+  @extend .l-sec;
+  width: 880px;
+  @include mq($pcM) {
+    padding: 60px 5%;
+    width: 100%;
+  }
+  @include mq($miniTablet) {
+    padding: 40px 5%;
+  }
+}
+.l-sec--s {
+  @extend .l-sec;
+  width: 768px;
+  @include mq($pcM) {
+    padding: 60px 5%;
+    width: 100%;
+  }
+  @include mq($miniTablet) {
+    padding: 30px 5%;
+  }
+}
+.l-sec--2nd {
+  @include mq($pcM) {
+    padding-left: 200px;
+  }
+  @include mq($miniTablet) {
+    padding: 30px 5%;
+  }
+}
+
+// ------------------------------------------------------------
+// l-post
+// ------------------------------------------------------------
+.l-post {
+
+}
+.l-postHeading {
+  margin-bottom: 40px;
+  @include mq($miniTablet) {
+    margin-bottom: 20px;
+  }
+}
+.l-postTtl {
+  margin: 0 0 .5em 0;
+  @include fz(32);
+}
+.l-postTtl--sub {
+  margin: 0;
+  @include fz(20);
+  color: $blue;
+}
+.l-postTtl--3 {
+  margin: 40px 0 20px;
+  @include fz(20);
+}
+.l-postBody {
+  margin-bottom: 80px;
+  @include mq($miniTablet) {
+    margin-bottom: 40px;
+  }
+  p {
+    margin-bottom: 2em;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+// ------------------------------------------------------------
+// l-postDl
+// ------------------------------------------------------------
+.l-postDl {
+  padding: 40px 0 80px;
+}
+.l-postDl__item {
+  margin-bottom: 6px;
+  background-color: $blue-light;
+  font-weight: bold;
+  a {
+    position: relative;
+    display: block;
+    padding: 24px 60px;
+    border: 3px solid $blue-light;
+    color: $blue;
+    background-image: url('/assets/images/common/ic-file.svg');
+    background-repeat: no-repeat;
+    background-position: 30px 27px;
+    background-size: 20px 25px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      right: 30px;
+      width: 20px;
+      height: 15px;
+      background-image: url('/assets/images/common/ic-dl.svg');
+      background-repeat: no-repeat;
+      background-size: 20px 15px;
+      //background-color: #ccc;
+    }
+    &::after {
+      content: '';
+    }
+  }
+  span {
+    font-weight: normal;
+  }
+  &:hover {
+    a {
+      border: 3px solid $blue;
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// l-footer
+// ------------------------------------------------------------
+.l-footer {
+  text-align: center;
+}
+.l-footer__bnr {
+  padding: 40px 15px 80px;
+  //background-color: $blue_light;
+  @include mq($miniTablet) {
+    padding: 20px 10px 40px;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    li {
+      display: inline-block;
+      padding: 10px 15px;
+      list-style: none;
+      @include mq($miniTablet) {
+        padding: 0;
+      }
+      a {
+        display: inline-block;
+        @include mq($miniTablet) {
+          transform: scale(.75);
+        }
+        img {
+
+        }
+      }
+    }
+  }
+}
+
+.l-footer__info {
+  padding: 60px;
+  //background-color: $blue;
+  //color: #fff;
+  @include fz(14);
+  font-weight: bold;
+  line-height: 2;
+  @include mq($miniTablet) {
+    padding: 20px;
+    @include fz(12);
+    letter-spacing: normal;
+  }
+  a {
+    color: #fff;
+  }
+  address {
+    @include fz(13);
+    font-family: $fontE;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    @include mq($miniTablet) {
+      @include fz(10);
+    }
+    span {
+      font-family: $fontFamily;
+      @include fz(12);
+      font-weight: bold;
+      @include mq($miniTablet) {
+        @include fz(9);
+      }
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// l-loader
+// ------------------------------------------------------------
+.l-loader {
+
+}

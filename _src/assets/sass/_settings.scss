@@ -1,0 +1,49 @@
+// ============================================================
+// 設定
+// ============================================================
+// ------------------------------------------------------------
+// font-family
+// color
+// MediaQuery
+// ------------------------------------------------------------
+
+// ------------------------------------------------------------
+// font-family
+// ------------------------------------------------------------
+$fontFamily: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', YuGothic, 'Yu Gothic Medium', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+// $fontFamily: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Segoe UI', 'M PLUS Rounded 1c', YuGothic, 'Yu Gothic Medium', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+$fontE: 'Questrial', sans-serif;
+
+// ------------------------------------------------------------
+// color
+// ------------------------------------------------------------
+$base-black: #333;
+$blue: #009EE6;
+$blue_light: #EAEDF0;
+$green: #35934A;
+$green_light: #EAF0ED;
+$yellow: #F7EB57;
+
+// ------------------------------------------------------------
+// z-index
+// ------------------------------------------------------------
+$zindex-header: 100;
+$zindex-wrapper: 99;
+
+// ------------------------------------------------------------
+// MediaQuery
+// ------------------------------------------------------------
+$pcL: 1480px;
+$pcM: 1200px;
+$pc: 960px;
+$tablet: 840px;
+$ipad: 768px;
+$miniTablet: 640px;
+$sp: 480px;
+
+// ------------------------------------------------------------
+// Common Size
+// ------------------------------------------------------------
+$headH: 60px;
+$headH-sp: 44px;
+$sideMargin: 6%;
