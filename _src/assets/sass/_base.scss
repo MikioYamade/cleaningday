@@ -52,14 +52,15 @@ input[type="search"] {
   box-sizing: border-box;
 }
 a {
+  font-weight: bold;
   &:link,
   &:visited {
-    color: $blue;
+    color: $green;
     text-decoration: none;
   }
   &:hover,
   &:active {
-    color: #999;
+    color: $blue;
     text-decoration: none;
   }
 }

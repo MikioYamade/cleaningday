@@ -35,7 +35,7 @@ body {
 .l-wrapper {
   z-index: $zindex-wrapper;
   position: relative;
-  margin-top: 80px;
+  margin-top: 60px;
   padding: 0 60px;
   box-sizing: border-box;
   @include fz(14);
@@ -55,24 +55,14 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
-  background-color: #fff;
+  height: 60px;
+  background-color: $brown;
   transition: 0.2s ease-out;
   &.is-fixed {
     height: 60px;
     box-shadow: 0 0 6px rgba(0,0,0,0.16);
     @include mq($pc) {
       height: 40px;
-    }
-    .l-logoTop {
-      top: 8px;
-      width: 40px;
-      height: 46px;
-      background-size: 40px 46px;
-      @include mq($pc) {
-        top: 3px;
-        background-size: 30px 35px;
-      }
     }
     .l-header__gnav {
       bottom: 14px;
@@ -99,9 +89,13 @@ body {
 }
 .l-header__gnav {
  position: absolute;
- bottom: 24px;
- right: 260px;
+ margin: 0 auto;
+ bottom: 14px;
+ right: -100%;
+ left: -100%;
+ width: 800px;
  transition: 0.2s ease-out;
+ text-align: center;
  @include mq($pc) {
   background-color: #fff;
   position: fixed;
@@ -140,11 +134,11 @@ body {
     a {
       display: inline-block;
       margin-left: 1.5em;
-      @include fz(16);
-      letter-spacing: 0;
+      @include fz(18);
+      letter-spacing: .05em;
       //font-weight: bold;
       font-family: $fontE;
-      color: $base-black;
+      color: #fff;
     }
     &.is-current {
       &::after {
@@ -178,7 +172,7 @@ body {
 .l-header__subnav,
 .l-footer__sns {
   position: absolute;
-  top: 24px;
+  top: 16px;
   right: 60px;
   transition: 0.2s ease-out;
   @include mq($pc) {
@@ -329,10 +323,12 @@ body {
 // l-content
 // ------------------------------------------------------------
 .l-content {
+  margin: 0 auto;
+  width: $pc;
   position: relative;
   background-color: #fff;
   @include mq($pc) {
-    //padding-top: 80px;
+    width: 100%;
   }
 }
 .l-content--top {
@@ -559,14 +555,14 @@ body {
     letter-spacing: normal;
   }
   a {
-    color: #fff;
+    //color: #fff;
   }
   address {
     @include fz(13);
-    font-family: $fontE;
     font-weight: normal;
     font-style: normal;
-    line-height: 1;
+    font-weight: bold;
+    line-height: 1.6;
     @include mq($miniTablet) {
       @include fz(10);
     }

@@ -14,7 +14,7 @@
 // c-sec
 // ------------------------------------------------------------
 .c-sec {
-  margin: 0 auto 120px;
+  margin: 0 auto 80px;
   max-width: $pcL;
   @include clearfix;
   @include mq($miniTablet) {
@@ -26,13 +26,10 @@
 // c-heading
 // ------------------------------------------------------------
 .c-heading {
-  width: 25%;
-  float: left;
-  margin: 0;
-  @include clearfix;
+  width: 100%;
+  margin-bottom: 30px;
   @include mq($pcM) {
     width: 100%;
-    float: none;
     margin-bottom: 40px;
   }
   @include mq($miniTablet) {
@@ -41,68 +38,65 @@
 }
 .c-title {
   margin: 0;
-  padding: 0;
-  @include fz(28);
+  padding: 0 0 .2em 0;
+  @include fz(36);
   font-family: $fontE;
-  font-weight: bold;
-  text-transform: uppercase;
+  font-weight: normal;
   line-height: 1;
+  border-bottom: 3px solid $brown_light;
   @include mq($miniTablet) {
     @include fz(20);
     font-weight: normal;
-  } 
+  }
+  span {
+    margin-left: 1em;
+    @include fz(15);
+    font-family: $fontFamily;
+    color: $gray;
+    font-weight: bold;
+  }
 }
 .c-title2 {
   
 }
-.c-headingNav {
-  @include mq($pc) {
-    display: none;
-  } 
-  > ul {
-    margin: 2em 0 1em;
-    padding: 0;
-    > li {
-      list-style: none;
-      line-height: 2.2;
-      @include mq($pcM) {
-        display: inline-block;
-        &::after {
-
-          content: '　';
-        }
-      }
-      > a {
-        color: $base-black;
-        &:hover {
-          color: #999;
-        }
-      }
-    }
-  }
-}
-
 
 
 // ------------------------------------------------------------
 // c-main
 // ------------------------------------------------------------
 .c-main {
-  width: 75%;
-  float: right;
+  margin: 0 auto;
+  width: $miniTablet;
   @include mq($pcM) {
     width: 100%;
     float: none;
   }
 }
 .c-text {
-  width: 730px;
+  //width: 730px;
+  line-height: 2.4;
   @include mq($pc) {
     width: 100%;
   }
+  h2 {
+    margin: 2em 0 1em;
+  }
+  h3 {
+    margin: 2em 0 .5em;
+  }
+  figure {
+    figcaption {
+      @include fz(13);
+      text-align: right;
+    }
+  }
+  img {
+    max-width: 100%;
+  }
 }
 .c-mainImg {
-  @include mq($ipad) {
+  margin-bottom: 40px;
+  img {
     width: 100%;
     height: auto;
   }

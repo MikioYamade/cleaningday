@@ -10,22 +10,21 @@
 // p-topHero
 // ------------------------------------------------------------
 .p-topHero {
-  display: flex;
-	justify-content: space-between;
-	align-items: center;
   position: relative;
-  padding: 80px 0 160px;
-  //background-color: #e5e5e5;
+  margin: 0 auto;
+  padding: 40px 0 60px;
+  width: $pc;
   @include clearfix;
   @include mq($pc) {
     display: block;
     padding: 40px 0 60px;
+    width: 100%;
   }
 }
 .p-topHeroLogo {
   position: relative;
   float: left;
-  width: 45%;
+  width: 50%;
   //background-color: #000;
   text-align: center;
   @include mq($pc) {
@@ -46,74 +45,108 @@
     }
   }
 }
-.p-topHeroSlide {
-    //z-index: 0;
-    //overflow: hidden;
-    float: right;
-    position: relative;
-    width: 55%;
-    &.is-hidden {
-      visibility: hidden;
-    }
-    @include mq($pc) {
-      float: none;
-      width: 100%;
+.p-topHeroText {
+  box-sizing: border-box;
+  float: right;
+  padding: 60px 0 0 20px;
+  position: relative;
+  width: 50%;
+  &.is-hidden {
+    visibility: hidden;
+  }
+  @include mq($pc) {
+    float: none;
+    width: 100%;
+  }
+}
+.p-topHeroText__copy--sub {
+  margin-bottom: 20px;
+  @include fz(20);
+  line-height: 1.4;
+}
+.p-topHeroText__copy {
+  margin-bottom: 40px;
+  @include fz(42);
+  color: $brown;
+  font-weight: bold;
+  line-height: 1.4;
+  letter-spacing: .15em;
+}
+.p-topHeroTextNav {
+  margin-bottom: 30px;
+  ul {
+    padding: 0;
+    li {
+      margin-bottom: .2em;
+      @include fz(15);
+      font-weight: bold;
+      list-style-type: none;
+      a {
+        color: $green;
+      }
     }
   }
+}
+.p-topHeroText__date {
+  @include fz(20);
+  //line-height: 1.4;
+}
+
 
 // ------------------------------------------------------------
-// p-distribution
+// p-venues
 // ------------------------------------------------------------
-.p-distribution {
-  position: relative;
-  margin-bottom: 120px;
-  @include clearfix;
-  @include mq($miniTablet) {
-    margin-bottom: 60px;
-  }
+.p-venues {
+  margin-bottom: 60px;
 }
-.p-distributionImg {
-  float: left;
-  width: 435px;
-  @include mq($pcL) {
-    width: 46%;
-  }
-  @include mq($miniTablet) {
-    margin: 0 auto 20px;
-    float: none;
-    width: 80%
-  }
-  img {
+.p-topVenues {
+  margin-top: 60px; 
+}
+.p-venues__title {
+  margin-bottom: .5em;
+  padding: 0;
+}
+.p-venuesBox {
+  box-sizing: border-box;
+  overflow-x: scroll hidden;
+  border-radius: 20px;
+  padding: 0 20px;
+  ul {
+    box-sizing: border-box;
+    overflow-x: scroll;
+    display: flex;
     width: 100%;
-    height: auto;
-  }
-}
-.p-distributionBody {
-  float: right;
-  width: calc(100% - 550px);
-  @include mq($pcL) {
-    width: 46%;
-  }
-  @include mq($miniTablet) {
-    float: none;
-    width: 100%
-  }
-}
-.p-distributionTitle {
-  margin: 0 0 1.2em;
-  @include fz(28);
-  @include mq($miniTablet) {
-    margin: 0 0 0.75em;
-    @include fz(20);
-  }
-}
-.p-distributionBody__text {
-  nav {
-    padding: 2em 0 0;
-    @include mq($miniTablet) {
-      padding: 1em 0 0;
+    max-width: 980px;
+    margin: 0;
+    padding: 40px 0 20px 0;
+    /*justify-content: space-between;*/
+    li {
+      display: inline-block;
+      margin: 0 20px;
+      width: 240px;
+      list-style: none;
+      
+      figure {
+        margin-bottom: 1em;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
     }
   }
+}
+.p-venuesBox--std {
+  background-color: #f3f3f3;
+}
+.p-venuesBox--spinoff {
+  background-color: #f5eaea;
+}
+.p-venuesBox__title {
+  font-weight: bold;
+}
+.p-venuesBox__link {
+
 }
 
 // ------------------------------------------------------------
@@ -160,7 +193,10 @@
 // ------------------------------------------------------------
 .p-topNews {
   width: 500px;
-  margin: 0 auto 40px;
+  margin: 60px auto 40px;
+  padding: 40px;
+  border-radius: 20px;
+  background-color: #507091;
   @include mq($ipad) {
     width: 320px;
   }
@@ -174,3 +210,28 @@
     height: 280px !important;
   }
 }
+
+// ------------------------------------------------------------
+// p-TopArchive
+// ------------------------------------------------------------
+.p-TopArchive {
+  padding: 0;
+  li {
+    margin-bottom: 4px;
+    list-style: none;
+    background-color: #f3f3f3;
+    font-weight: bold;
+    a {
+      display: block;
+      padding: .75em 1em;
+    }
+    &.spinoff {
+      background-color: #F5EAEA;
+      a {
+        color: #9E2C43;
+      }
+    }
+  }
+
+}
+
