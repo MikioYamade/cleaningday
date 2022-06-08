@@ -45,7 +45,7 @@
   line-height: 1;
   border-bottom: 3px solid $brown_light;
   @include mq($miniTablet) {
-    @include fz(20);
+    @include fz(24);
     font-weight: normal;
   }
   span {
@@ -54,6 +54,9 @@
     font-family: $fontFamily;
     color: $gray;
     font-weight: bold;
+    @include mq($miniTablet) {
+      @include fz(12);
+    }
   }
 }
 .c-title2 {
@@ -78,6 +81,9 @@
   @include mq($pc) {
     width: 100%;
   }
+  @include mq($miniTablet) {
+    line-height: 2;
+  }
   h2 {
     margin: 2em 0 1em;
   }
@@ -96,6 +102,9 @@
 }
 .c-mainImg {
   margin-bottom: 40px;
+  @include mq($miniTablet) {
+    margin-bottom: 20px;
+  }
   img {
     width: 100%;
     height: auto;
@@ -436,6 +445,57 @@
 // c-gotoTop
 // ------------------------------------------------------------
 .c-gotoTop {
+  z-index: 10000;
+  position: fixed;
+  box-sizing: border-box;
+  right: 10px;
+  bottom: 0px;
+  width: 50px;
+  height: 20px;
+  padding-top: 0px;
+
+  //background-color: #ccc;
+  cursor: pointer;
+  font-family: $fontE;
+  line-height: 1;
+  letter-spacing: 1px;
+  @include fz(13);
+  transform: rotate(90deg);
+  transform-origin: right top;
+  &:before {
+    position: absolute;
+    content: "";
+    bottom: 0px;
+    left: -5px;
+    width: 50px;
+    height: 1px;
+    background-color: #000;
+  }
+  &:after {
+    position: absolute;
+    content: "";
+    bottom: 0px;
+    left: -5px;
+    width: 10px;
+    height: 1px;
+    background-color: #000;
+    transform: rotate(-45deg);
+    transform-origin: left bottom;
+  }
+  @include mq($sp) {
+  }
+  a {
+    display: block;
+    width: 80px;
+    height: 20px;
+    padding-left: 15px;
+    font-family: $fontE;
+    font-weight: normal;
+    color: $brown;
+  }
+
+  &:hover {
+  }
 }
 
 // ------------------------------------------------------------

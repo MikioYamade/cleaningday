@@ -58,6 +58,9 @@ body {
   height: 60px;
   background-color: $brown;
   transition: 0.2s ease-out;
+  @include mq($pc) {
+    height: 40px;
+  }
   &.is-fixed {
     height: 60px;
     box-shadow: 0 0 6px rgba(0,0,0,0.16);
@@ -97,7 +100,7 @@ body {
  transition: 0.2s ease-out;
  text-align: center;
  @include mq($pc) {
-  background-color: #fff;
+  background-color: $brown;
   position: fixed;
   box-sizing: border-box;
   left: 0;
@@ -116,7 +119,7 @@ body {
      right: -100%;
      left: -100%;
      width: 240px;
-     height: 360px;
+     height: 400px;
    }
   li {
     position: relative;
@@ -124,21 +127,24 @@ body {
     list-style: none;
     @include mq($pc) {
       display: block;
-      padding: 10px 0 20px;
+      padding: 15px 0;
       text-align: center;
       @include fz(20);
       margin-left: 0;
-      margin-bottom: .75em;
-      border-bottom: 1px solid #e5e5e5;
+      //margin-bottom: .75em;
+      //border-bottom: 1px solid #e5e5e5;
     }
     a {
       display: inline-block;
       margin-left: 1.5em;
       @include fz(18);
       letter-spacing: .05em;
-      //font-weight: bold;
+      font-weight: normal;
       font-family: $fontE;
       color: #fff;
+      @include mq($pc) {
+        margin-left: 0;
+      }
     }
     &.is-current {
       &::after {
@@ -263,13 +269,13 @@ body {
   }
 }
 .menu__line {
-  background: $base-black;
+  background: #fff;
   display: block;
   height: 2px;
   position: absolute;
   transition: transform .3s;
   width: 100%;
-  //border-radius: 2px;
+  border-radius: 2px;
 }
 .menu__line--center {
   top: 6px;

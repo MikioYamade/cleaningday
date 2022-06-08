@@ -17,7 +17,7 @@
   @include clearfix;
   @include mq($pc) {
     display: block;
-    padding: 40px 0 60px;
+    padding: 20px 0 20px;
     width: 100%;
   }
 }
@@ -30,7 +30,7 @@
   @include mq($pc) {
     float: none;
     width: 100%;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
   }
   img {
     @include mq($pcM) {
@@ -41,7 +41,7 @@
       width: 50%;
     }
     @include mq($miniTablet) {
-      width: 60%;
+      width: 80%;
     }
   }
 }
@@ -57,12 +57,20 @@
   @include mq($pc) {
     float: none;
     width: 100%;
+    text-align: center;
+  }
+  @include mq($miniTablet) {
+    padding: 15px;
   }
 }
 .p-topHeroText__copy--sub {
   margin-bottom: 20px;
   @include fz(20);
   line-height: 1.4;
+  @include mq($miniTablet) {
+    margin-bottom: 10px;
+    @include fz(16);
+  }
 }
 .p-topHeroText__copy {
   margin-bottom: 40px;
@@ -71,9 +79,16 @@
   font-weight: bold;
   line-height: 1.4;
   letter-spacing: .15em;
+  @include mq($miniTablet) {
+    margin-bottom: 20px;
+    @include fz(28);
+  }
 }
 .p-topHeroTextNav {
   margin-bottom: 30px;
+  @include mq($miniTablet) {
+    margin-bottom: 20px;
+  }
   ul {
     padding: 0;
     li {
@@ -81,6 +96,7 @@
       @include fz(15);
       font-weight: bold;
       list-style-type: none;
+      line-height: 1.8;
       a {
         color: $green;
       }
@@ -90,6 +106,9 @@
 .p-topHeroText__date {
   @include fz(20);
   //line-height: 1.4;
+  @include mq($miniTablet) {
+    @include fz(16);
+  }
 }
 
 
@@ -98,13 +117,22 @@
 // ------------------------------------------------------------
 .p-venues {
   margin-bottom: 60px;
+  @include mq($miniTablet) {
+    margin-bottom: 30px;
+  }
 }
 .p-topVenues {
-  margin-top: 60px; 
+  margin-top: 60px;
+  @include mq($miniTablet) {
+    margin-top: 30px;
+  }
 }
 .p-venues__title {
   margin-bottom: .5em;
   padding: 0;
+  @include mq($miniTablet) {
+    @include fz(16);
+  }
 }
 .p-venuesBox {
   box-sizing: border-box;
@@ -120,14 +148,23 @@
     margin: 0;
     padding: 40px 0 20px 0;
     /*justify-content: space-between;*/
+    @include mq($miniTablet) {
+      padding: 20px 0 10px 0;
+    }
     li {
       display: inline-block;
       margin: 0 20px;
       width: 240px;
       list-style: none;
-      
+      @include mq($miniTablet) {
+        margin: 0 10px;
+        width: 180px;
+      }
       figure {
         margin-bottom: 1em;
+        @include mq($miniTablet) {
+          
+        }
         img {
           width: 100%;
           height: auto;
@@ -144,9 +181,21 @@
 }
 .p-venuesBox__title {
   font-weight: bold;
+  @include mq($miniTablet) {
+    margin-bottom: .2em;
+    @include fz(13);
+    line-height: 1.4;
+  }
 }
 .p-venuesBox__link {
-
+  word-wrap: break-word;
+  @include mq($miniTablet) {
+    @include fz(12);
+    line-height: 1.4;
+  }
+  a {
+    font-weight: normal;
+  }
 }
 
 // ------------------------------------------------------------
@@ -198,7 +247,9 @@
   border-radius: 20px;
   background-color: #507091;
   @include mq($ipad) {
-    width: 320px;
+    margin: 30px auto 20px;
+    padding: 20px;
+    width: 300px;
   }
 }
 
